@@ -8,27 +8,41 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-/* Container to hold both content and image */
+/* Container for the content and image */
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
   padding: 20px;
-  height: 80vh; /* Make the main section cover most of the page height */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
-/* Style for the text content */
+/* Hero Image Section */
+.hero {
+  flex: 1; /* Take up equal space with the content */
+  display: flex;
+  justify-content: flex-end; /* Align the image to the right */
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Content Section */
 .content {
-  width: 50%; /* Take up half of the page width */
+  flex: 1; /* Take up equal space with the image */
+  padding: 20px;
 }
 
 .content h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
@@ -44,7 +58,8 @@ body {
 input[type="email"] {
   padding: 10px;
   margin-bottom: 10px;
-  width: 80%;
+  width: 100%;
+  max-width: 400px;
 }
 
 button {
@@ -60,22 +75,32 @@ button {
   display: none; /* Initially hidden */
 }
 
-/* Style for the image */
-.hero {
-  width: 45%; /* Adjusts the width for the image section */
-  display: flex;
-  justify-content: flex-end; /* Align the image to the right */
-}
-
-.hero-img {
-  max-width: 100%; /* Ensure image scales correctly */
-  height: auto;
-}
-
-/* Footer at the bottom of the page */
+/* Footer */
 footer {
   text-align: center;
   margin-top: auto;
   padding: 10px;
   background-color: #f4f4f4;
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .hero {
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  input[type="email"] {
+    width: 80%;
+  }
 }
