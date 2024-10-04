@@ -35,6 +35,13 @@ body {
   height: auto;
 }
 
+/* Media Queries to switch between hero-mobile and hero-desktop */
+@media (min-width: 768px) {
+  .hero-img {
+    content: url('images/hero-desktop.jpg'); /* Switch to desktop image on larger screens */
+  }
+}
+
 /* Content Section */
 .content {
   flex: 1; /* Take up equal space with the image */
