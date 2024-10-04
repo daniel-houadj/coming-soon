@@ -1,35 +1,81 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.hero {
-    background: url('images/hero-desktop.jpg') no-repeat center center/cover;
-    height: 50vh;
+/* Container to hold both content and image */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 80vh; /* Make the main section cover most of the page height */
 }
 
+/* Style for the text content */
 .content {
-    text-align: center;
-    padding: 2rem;
+  width: 50%; /* Take up half of the page width */
 }
 
-form {
-    margin-top: 1rem;
+.content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content form {
+  display: flex;
+  flex-direction: column;
 }
 
 input[type="email"] {
-    padding: 0.75rem;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 80%;
 }
 
 button {
-    padding: 0.75rem 2rem;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  display: none; /* Initially hidden */
+}
+
+/* Style for the image */
+.hero {
+  width: 45%; /* Adjusts the width for the image section */
+  display: flex;
+  justify-content: flex-end; /* Align the image to the right */
+}
+
+.hero-img {
+  max-width: 100%; /* Ensure image scales correctly */
+  height: auto;
+}
+
+/* Footer at the bottom of the page */
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 10px;
+  background-color: #f4f4f4;
 }
